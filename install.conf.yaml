@@ -1,0 +1,16 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~', '~/.config']
+
+- link:
+    ~/.atom/config.cson: atom/config.cson
+    ~/.atom/packages.cson: atom/packages.cson
+    ~/.config/clean-chroot-manager.conf: clean-chroot-manager.conf
+    ~/.config/fish/config.fish: config.fish
+    ~/.gitconfig: gitconfig
+    ~/.vimrc: vimrc
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

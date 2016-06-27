@@ -1,0 +1,12 @@
+[user]
+	name = Michael Spencer
+	email = sonrisesoftware@gmail.com
+[push]
+	default = simple
+[core]
+	editor = vim
+[init]
+	templatedir = ~/.git-templates
+[cola]
+	fontdiff = Monospace,11,-1,5,50,0,0,0,0,0
+	tabwidth = 4

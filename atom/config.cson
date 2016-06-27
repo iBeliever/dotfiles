@@ -1,0 +1,85 @@
+"*":
+  "atom-beautify":
+    _analyticsUserId: "fa76e47e-8cad-4d76-8c3c-91fc252aeee5"
+    beautifyEntireFileOnSave: false
+    html_indent_size: 2
+    html_wrap_line_length: 100
+    indent_size: 4
+    python_sort_imports: true
+  core:
+    autoHideMenuBar: true
+    customFileTypes:
+      "source.cpp": [
+        "h"
+      ]
+    disabledPackages: [
+      "linter-pep8"
+    ]
+  editor:
+    fontFamily: "Monospaced"
+    invisibles: {}
+    preferredLineLength: 100
+    showIndentGuide: true
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+    softWrapHangingIndent: 8
+    tabLength: 4
+    tabType: "soft"
+  "exception-reporting":
+    userId: "c114ae33-0108-d15d-643e-403d63ca2e78"
+  linter:
+    errorPanelHeight: 75
+  minimap: {}
+  pigments: {}
+  "python-iresolve": {}
+  "python-isort": {}
+  "symbols-tree-view":
+    autoHide: true
+  "terminal-panel":
+    shell: "/bin/fish"
+  "tree-view": {}
+  welcome:
+    showOnStartup: false
+".angular.html.text":
+  editor:
+    tabLength: 2
+".ansible.source":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 4
+    tabLength: 2
+".attribute-values.js.jsx.source":
+  editor:
+    preferredLineLength: 100
+".basic.html.text":
+  editor:
+    preferredLineLength: 100
+    tabLength: 2
+".css.source":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 4
+    tabLength: 2
+".html.jinja.text":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 8
+    tabLength: 2
+".jinja.source":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 8
+".js.jsx.react.source":
+  editor:
+    preferredLineLength: 100
+".js.jsx.source":
+  editor:
+    preferredLineLength: 100
+".js.source.subtlegradient":
+  editor:
+    preferredLineLength: 100
+".pug.source":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 4
+    tabLength: 2
