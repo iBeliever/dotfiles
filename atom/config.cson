@@ -16,7 +16,7 @@
       "linter-pep8"
     ]
   editor:
-    fontFamily: "Monospaced"
+    fontFamily: "Noto Mono"
     invisibles: {}
     preferredLineLength: 100
     showIndentGuide: true
