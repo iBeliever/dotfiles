@@ -7,6 +7,7 @@
 - link:
     ~/.atom/config.cson: atom/config.cson
     ~/.atom/packages.cson: atom/packages.cson
+    ~/.clang-format: clang-format
     ~/.config/clean-chroot-manager.conf: clean-chroot-manager.conf
     ~/.config/fish/config.fish: config.fish
     ~/.gitconfig: gitconfig

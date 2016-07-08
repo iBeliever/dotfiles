@@ -1,0 +1,30 @@
+---
+Language:        Cpp
+BasedOnStyle:  LLVM
+AccessModifierOffset: -4
+AllowShortIfStatementsOnASingleLine: false
+AlwaysBreakTemplateDeclarations: true
+BraceWrapping:
+    AfterClass: true
+    AfterControlStatement: false
+    AfterEnum: true
+    AfterFunction: true
+    AfterNamespace: true
+    AfterStruct: true
+    AfterUnion: true
+    BeforeCatch: false
+    BeforeElse: false
+    IndentBraces: false
+BreakBeforeBraces: Custom
+ColumnLimit:     100
+ConstructorInitializerIndentWidth: 8
+ContinuationIndentWidth: 8
+ForEachMacros:   [ foreach, Q_FOREACH, G_FOREACH, BOOST_FOREACH, FOREACH_ELEMENT ]
+IndentCaseLabels: false
+IndentWidth:     4
+MaxEmptyLinesToKeep: 1
+SpaceAfterCStyleCast: true
+Standard:        Cpp11
+TabWidth:        4
+UseTab:          Never
+...
