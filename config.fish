@@ -10,6 +10,9 @@ eval (python3 -m virtualfish)
 switch (uname)
 case Darwin
     set -x PATH $PATH ~/Library/bin
+
+    # On Linux, there's a systemd service for this
+    powerline-daemon -q
 case Linux
     set -x PATH $PATH ~/.local/bin
     set -x QML2_IMPORT_PATH ~/.local/lib/qt/qml/ $QML2_IMPORT_PATH
