@@ -48,6 +48,6 @@
   # Interactively rebase all the commits on the current branch
   edit = "!git rebase -i $(git merge-base develop HEAD)"
 
-  review = "!f() { NAME=$(git space-name); xdg-open https://app.assembla.com/spaces/$NAME/git/compare/$NAME:$(git branch-name)...$NAME:develop?show_merge_request_form=true; }; f"
+  review = "!f() { NAME=$(git space-name); open https://app.assembla.com/spaces/$NAME/git/compare/$NAME:$(git branch-name)...$NAME:develop?show_merge_request_form=true; }; f"
 
   space-name = "!git remote get-url origin | grep -oP \"git@git\\.assembla\\.com:\\K(.+)(?=\\.git)\""
