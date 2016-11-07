@@ -16,4 +16,5 @@ case Darwin
 case Linux
     set -x PATH $PATH ~/.local/bin
     set -x QML2_IMPORT_PATH ~/.local/lib/qt/qml/ $QML2_IMPORT_PATH
+    set -x ANSIBLE_ROLES_PATH ~/.local/share/ansible/roles
 end
