@@ -45,6 +45,9 @@
   # Show only commits on the current feature branch
   changes = "!git log $(git branch-name) --not develop --no-merges"
 
+  # Show only unpushed changes
+  unpushed = "!git log origin/$(git branch-name)..$(git branch-name)"
+
   # Interactively rebase all the commits on the current branch
   edit = "!git rebase -i $(git merge-base develop HEAD)"
 
