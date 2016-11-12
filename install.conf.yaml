@@ -10,6 +10,7 @@
     ~/.clang-format: clang-format
     ~/.config/clean-chroot-manager.conf: clean-chroot-manager.conf
     ~/.config/fish/config.fish: config.fish
+    ~/.config/nvim/init.vim: nvim/init.vim
     ~/.gitconfig: gitconfig
     ~/.vimrc: vimrc
 
