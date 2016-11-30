@@ -2,6 +2,7 @@
 Language:        Cpp
 BasedOnStyle:  LLVM
 AccessModifierOffset: -4
+AllowShortFunctionsOnASingleLine: false
 AllowShortIfStatementsOnASingleLine: false
 AlwaysBreakTemplateDeclarations: true
 BraceWrapping:
@@ -16,8 +17,9 @@ BraceWrapping:
     BeforeElse: false
     IndentBraces: false
 BreakBeforeBraces: Custom
+BreakConstructorInitializersBeforeComma: true
 ColumnLimit:     100
-ConstructorInitializerIndentWidth: 8
+ConstructorInitializerIndentWidth: 4
 ContinuationIndentWidth: 8
 ForEachMacros:   [ foreach, Q_FOREACH, G_FOREACH, BOOST_FOREACH, FOREACH_ELEMENT ]
 IndentCaseLabels: false
