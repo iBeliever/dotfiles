@@ -11,6 +11,8 @@ switch (uname)
 case Darwin
     set -x PATH $PATH ~/Library/bin
 
+    alias dock-add-spacer "defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type=\"spacer-tile\";}'; and killall Dock"
+
     # On Linux, there's a systemd service for this
     powerline-daemon -q
 case Linux
