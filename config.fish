@@ -12,6 +12,8 @@ case Darwin
     set -x PATH $PATH ~/Library/bin
 
     alias dock-add-spacer "defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type=\"spacer-tile\";}'; and killall Dock"
+    alias show-files 'defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+    alias hide-files 'defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
     # On Linux, there's a systemd service for this
     powerline-daemon -q
