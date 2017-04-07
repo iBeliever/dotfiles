@@ -1,0 +1,8 @@
+- link:
+    ~/.atom/
+    config.cson:
+      create: true
+      path: editors/atom/config.cson
+    ~/.atom/packages.cson: 
+      create: true
+      path: editors/atom/packages.cson

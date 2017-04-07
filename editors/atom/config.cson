@@ -16,7 +16,7 @@
       "linter-pep8"
     ]
   editor:
-    fontFamily: "Hack"
+    fontFamily: "Fira Mono"
     invisibles: {}
     preferredLineLength: 100
     showIndentGuide: true

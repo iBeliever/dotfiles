@@ -1,0 +1,8 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~', '~/.config', '~/.config/fish', '~/.atom', '~/.config/Code', '~/.config/nvim']
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

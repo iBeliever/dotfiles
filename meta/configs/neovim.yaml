@@ -1,0 +1,4 @@
+- link:
+    ~/.config/nvim/init.vim: 
+      create: true
+      path: editors/nvim/init.vim

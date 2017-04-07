@@ -1,0 +1,4 @@
+- link:
+    ~/Library/Application Support/Code/User/settings.json: 
+      create: true
+      path: editors/vscode/settings.json
