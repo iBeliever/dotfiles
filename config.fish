@@ -6,6 +6,11 @@ powerline-setup
 eval (python3 -m virtualfish)
 
 # set -x PATH (ruby -e 'print Gem.user_dir')/bin $PATH
+set -x PATH (yarn global bin) $PATH
+
+if test -d ~/.cargo/bin
+    set -x PATH $PATH ~/.cargo/bin
+end
 
 switch (uname)
 case Darwin
