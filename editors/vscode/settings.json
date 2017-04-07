@@ -58,5 +58,6 @@
     },
     "[c]": {
         "editor.quickSuggestions": false
-    }
+    },
+    "window.menuBarVisibility": "toggle"
 }
