@@ -15,8 +15,9 @@
     disabledPackages: [
       "linter-pep8"
     ]
+    telemetryConsent: "limited"
   editor:
-    fontFamily: "Fira Mono"
+    fontFamily: "Fira Code"
     invisibles: {}
     preferredLineLength: 100
     showIndentGuide: true
@@ -24,11 +25,9 @@
     softWrapAtPreferredLineLength: true
     softWrapHangingIndent: 8
     tabLength: 4
-    tabType: "soft"
   "exception-reporting":
     userId: "c114ae33-0108-d15d-643e-403d63ca2e78"
-  linter:
-    errorPanelHeight: 75
+  linter: {}
   minimap: {}
   pigments: {}
   "python-iresolve": {}
