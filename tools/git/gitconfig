@@ -51,7 +51,8 @@
   # Interactively rebase all the commits on the current branch
   edit = "!git rebase -i $(git merge-base develop HEAD)"
 
-  review = "!f() { NAME=$(git repo-name) && open $(git repo-url)/compare/$NAME:$(git branch-name)...$NAME:develop?show_merge_request_form=true; }; f"
+  review = "!f() { NAME=$(git repo-name); open $(git repo-url)/compare/$NAME:$(git branch-name)...$NAME:develop?show_merge_request_form=true; }; f"
+  merge-requests = "!f() { open $(git repo-url)/merge_requests; }; f"
 
   repo-url = "!f() { REPO_EXT=$(git repo-ext); URL=https://app.assembla.com/spaces/$(git space-name)/git; if [ -z $REPO_EXT ]; then echo $URL; else echo $URL-$REPO_EXT; fi; }; f"
   repo-ext = "!git repo-name | cut -s -d '.' -f2"
