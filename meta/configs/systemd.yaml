@@ -1,0 +1,4 @@
+- link:
+    ~/.config/systemd/user.conf:
+      create: true
+      path: tools/systemd/user.conf
