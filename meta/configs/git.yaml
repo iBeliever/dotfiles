@@ -1,2 +1,3 @@
 - link:
     ~/.gitconfig: tools/git/gitconfig
+    ~/.gitconfig-lelander: tools/git/gitconfig-lelander

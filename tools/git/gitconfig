@@ -10,9 +10,11 @@
 [cola]
 	fontdiff = Monospace,11,-1,5,50,0,0,0,0,0
 	tabwidth = 4
+
+[includeIf "gitdir:~/Developer/Lelander/"]
+  path = .gitconfig-lelander
+
 [alias]
-  # Set my work address for the current project
-  lelander = config user.email \"michael@lelander.com\"
   change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f "
 
   # Get the current branch name (not so useful in itself, but used in
