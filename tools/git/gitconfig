@@ -42,7 +42,7 @@
 
   # Delete any branches that have been merged into master
   # See also: https://gist.github.com/robmiller/5133264
-  delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+  delete-merged-branches = "!git checkout develop && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
   # Show only commits on the current feature branch
   changes = "!git log $(git branch-name) --not develop --no-merges"
@@ -55,8 +55,10 @@
 
   review = "!f() { NAME=$(git repo-name); open $(git repo-url)/compare/$NAME:$(git branch-name)...$NAME:develop?show_merge_request_form=true; }; f"
   merge-requests = "!f() { open $(git repo-url)/merge_requests; }; f"
+  tickets = "!f() { open $(git space-url)/tickets; }; f"
 
-  repo-url = "!f() { REPO_EXT=$(git repo-ext); URL=https://app.assembla.com/spaces/$(git space-name)/git; if [ -z $REPO_EXT ]; then echo $URL; else echo $URL-$REPO_EXT; fi; }; f"
+  repo-url = "!f() { REPO_EXT=$(git repo-ext); URL=$(git space-url)/git; if [ -z $REPO_EXT ]; then echo $URL; else echo $URL-$REPO_EXT; fi; }; f"
+  space-url = "!f() { echo https://app.assembla.com/spaces/$(git space-name); }; f"
   repo-ext = "!git repo-name | cut -s -d '.' -f2"
   space-name = "!git repo-name | cut -d '.' -f1"
   repo-name = "!git remote get-url origin | perl -nle 'print $& if m{git@git\\.assembla\\.com:\\K(.+)(?=\\.git)}'"
