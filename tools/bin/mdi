@@ -17,4 +17,4 @@ match = re.search(pattern, css)
 icon_code = int(match.group(1), base=16)
 icon = chr(icon_code)
 
-print(icon)
+print(icon, end='')

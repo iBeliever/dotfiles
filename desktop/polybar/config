@@ -12,9 +12,8 @@
 blue1 = #0e5a8a
 blue5 = #48aff0
 
-background = #222
-background-alt = #444
-;foreground = ${xrdb:color7:#222}
+background = #E0282c34
+background-alt = #10FFFFFF
 foreground = #dfdfdf
 foreground-alt = #999
 primary = #ffb52a
@@ -23,11 +22,10 @@ alert = #bd2c40
 warn = #d9822b
 
 [bar/top]
-;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 56
 radius = 0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -36,7 +34,7 @@ line-size = 3
 line-color = #f00
 
 border-size = 4
-border-color = #000
+border-color = #80000000
 
 module-margin-left = 1
 module-margin-right = 2
@@ -46,71 +44,13 @@ font-1 = "Material Design Icons:pixelsize=24;0"
 
 modules-left = i3
 ; xwindow
-modules-center = mpd
-modules-right = updates volume wlan eth battery date powermenu
-
-[bar/bottom]
-;monitor = ${env:MONITOR:HDMI-1}
-width = 100%
-height = 56
-bottom = true
-radius = 0
-fixed-center = false
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 3
-line-color = #f00
-
-border-size = 4
-border-color = #000
-
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = "Ubuntu:size=20;0"
-font-1 = "Material Design Icons:pixelsize=24;0"
-
-modules-left = i3
-modules-right =
-
-tray-position = right
-tray-maxsize = 32
-
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+modules-center = date
+modules-right = updates volume wlan eth battery powermenu
 
 [module/xwindow]
 type = internal/xwindow
 label =   %title:0:100:...%
 format-padding = 3
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/i3]
 type = internal/i3
@@ -203,29 +143,13 @@ inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
 
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
-label = %percentage%%
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
-label = %percentage_used%%
-
 [module/wlan]
 type = internal/network
 interface = wlp58s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+; format-connected = <ramp-signal> <label-connected>
+format-connected =  <label-connected>
 label-connected = %essid%
 
 format-disconnected =
@@ -269,10 +193,7 @@ time-alt =  %l:%M %p
 
 format-margin = 0
 
-;format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-background = #000
-;format-underline = #0a6cf5
 format-padding = 3
 
 label = %date%%time%
@@ -297,14 +218,11 @@ adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-;format-charging-underline = #ffb52a
 
 format-discharging = <ramp-capacity> <label-discharging>
-;format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
-;format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
 ramp-capacity-0-foreground = ${colors.alert}
@@ -320,7 +238,6 @@ ramp-capacity-7 = 
 ramp-capacity-8 = 
 ramp-capacity-9 = 
 ramp-capacity-foreground = #CCC
-;${colors.foreground-alt}
 
 animation-charging-0 = 
 animation-charging-1 = 
@@ -355,7 +272,6 @@ format-spacing = 2
 format-background = #000
 
 label-open = %{T2}
-;label-open-foreground = ${colors.secondary}
 label-close =  Close
 label-close-foreground = ${colors.secondary}
 label-separator = |
@@ -385,10 +301,6 @@ exec = ~/.config/polybar/arch_updates.sh
 
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
 
 [global/wm]
 margin-top = 0

@@ -5,11 +5,10 @@
 	default = simple
 [core]
 	editor = nvim
-[init]
-	templatedir = ~/.git-templates
 [cola]
 	fontdiff = Monospace,11,-1,5,50,0,0,0,0,0
 	tabwidth = 4
+    spellcheck = false
 
 [includeIf "gitdir:~/Developer/Lelander/"]
   path = .gitconfig-lelander

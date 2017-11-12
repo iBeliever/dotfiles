@@ -27,8 +27,7 @@ set $notes          atom ~/Dropbox/personal/notes
 # Used for window titles
 font pango:Ubuntu 12
 
-for_window [class=".*"] border pixel 5
-#for_window [class="^.*"] border pixel 0
+for_window [class=".*"] border pixel 2
 gaps outer 10
 gaps inner 30
 smart_gaps on
@@ -194,4 +193,3 @@ exec $mail
 exec --no-startup-id i3-msg "workspace $ws10; exec $notes; workspace $ws1"
 # Run autostart .desktop files
 exec --no-startup-id dex -ae i3
-

@@ -11,33 +11,27 @@ Plug 'vim-airline/vim-airline-themes'
 " Syntax highlighting and error checking
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
 
 " Git stuff
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
-" Autocompletion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Rip-Rip/clang_complete'
-Plug 'Shougo/neoinclude.vim'
-Plug 'landaire/deoplete-swift'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
-" Function signatures
-Plug 'Shougo/echodoc.vim'
+Plug 'ledger/vim-ledger'
 
-" Files tree view
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
-" Command-T!
-Plug 'wincent/command-t'
+Plug 'lervag/vimtex'
 
 call plug#end()
 
+filetype plugin on
+
 " Basic setup
 set number
-set colorcolumn=100
+set colorcolumn=80
+set textwidth=79
 
 " Let plugins show effects after 500ms, not 4s
 set updatetime=500
@@ -76,9 +70,6 @@ highlight link SyntasticWarningSign SignColumn
 highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
 
-" Deoplete config
-call deoplete#enable()
-
 " Onedark color scheme
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
@@ -100,3 +91,38 @@ let g:airline_theme='onedark'
 
 syntax on
 colorscheme onedark
+
+let g:ledger_maxwidth = 90
+let g:ledger_fillstring = '   -'
+
+let g:vim_markdown_folding_level = 3
+let g:vim_markdown_new_list_item_indent = 2
+let g:vim_markdown_no_extensions_in_markdown = 1
+
+set breakindent
+
+nnoremap Q gq}
+
+function! s:ChangeFormatOption()
+    if &filetype == 'markdown'
+        if getline(line('.')) =~ '^>'
+          setlocal formatoptions+=c
+        else
+          " Do not automatically insert bullets when auto-wrapping with text-width
+          setlocal formatoptions-=c
+        endif
+    endif
+endfunction
+
+augroup MkdFormatOption
+    autocmd!
+    autocmd CursorMovedI *.m* call s:ChangeFormatOption()
+augroup END
+
+:set number relativenumber
+
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
