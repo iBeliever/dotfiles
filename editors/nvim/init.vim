@@ -4,9 +4,15 @@ call plug#begin()
 " Sensible vim defaults
 Plug 'tpope/vim-sensible'
 
+" Multiple cursors
+Plug 'terryma/vim-multiple-cursors'
+
 " Airline status line (like powerline)
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" Sidebar
+Plug 'scrooloose/nerdtree'
 
 " Syntax highlighting and error checking
 Plug 'joshdick/onedark.vim'
@@ -102,6 +108,11 @@ let g:vim_markdown_no_extensions_in_markdown = 1
 set breakindent
 
 nnoremap Q gq}
+map <C-t> :NERDTreeToggle<CR>
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 function! s:ChangeFormatOption()
     if &filetype == 'markdown'
@@ -119,10 +130,10 @@ augroup MkdFormatOption
     autocmd CursorMovedI *.m* call s:ChangeFormatOption()
 augroup END
 
-:set number relativenumber
+set number relativenumber
 
-:augroup numbertoggle
-:  autocmd!
-:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-:augroup END
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
