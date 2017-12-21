@@ -18,7 +18,7 @@ set $ws10 "10:Notes"
 set $launcher       i3-dmenu-desktop --dmenu="dmenu -i -fn Ubuntu -l 24 -x 1000 -y 300 -w 1200"
 set $terminal       SHELL=/usr/bin/fish termite
 set $lockscreen     i3lock -c 222222
-set $browser        firefox-developer
+set $browser        firefox-developer-edition
 set $mail           thunderbird
 set $notes          atom ~/Dropbox/personal/notes
 
